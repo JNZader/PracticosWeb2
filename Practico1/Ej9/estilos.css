@@ -1,0 +1,14 @@
+.sugerencias {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  .sugerencias li {
+    padding: 5px;
+    cursor: pointer;
+  }
+  .sugerencias li:hover {
+    background-color: #f0f0f0;
+  }

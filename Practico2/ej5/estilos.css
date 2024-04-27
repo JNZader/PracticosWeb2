@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #e1e1e1;
+}
+
+form {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px; 
+}
+
+#formNuevoLibro,
+#form_buscarLibroPorPrecio,
+#form_buscarLibroPorNombre {
+  display: none;
+  margin-bottom: 30px;
+}
+
+#listaLibros {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#listaLibros li {
+  margin-bottom: 15px;
+}
+
+#filtroNombre {
+  display: none;
+  margin-bottom: 20px;
+}
+
+#etiquetaSeleccionada {
+  display: block;
+  margin-bottom: 20px;
+}

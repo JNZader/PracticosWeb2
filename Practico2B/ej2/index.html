@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Filter</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <h1>Filtro de Autos</h1>
+
+    <form id="filterForm">
+      <label for="make">Marca:</label>
+      <input type="text" id="make" name="make" />
+
+      <label for="model">Modelo:</label>
+      <input type="text" id="model" name="model" />
+
+      <label for="fuelType">Tipo de Combustible:</label>
+      <select id="fuelType" name="fuelType">
+        <option value="">Todos</option>
+        <option value="gasoline">Gasolina</option>
+        <option value="diesel">Diesel</option>
+        <option value="hybrid">Híbrido</option>
+        <option value="electric">Eléctrico</option>
+      </select>
+
+      <button type="submit">Filtrar</button>
+    </form>
+
+    <div id="results"></div>
+
+    <script src="ej2.js"></script>
+  </body>
+</html>

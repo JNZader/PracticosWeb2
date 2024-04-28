@@ -9,32 +9,38 @@ eliminar esa entrada cuando sea necesario.  */
 
 const userListElement = document.getElementById("userList");
 
-function getRandomUser() {
-  fetch("https://randomuser.me/api/")
-    .then((response) => response.json())
-    .then((data) => {
-      const user = data.results[0];
-      const userCard = document.createElement("li");
-      userCard.classList.add("user-card");
+      function getRandomUser() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://randomuser.me/api/");
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            const user = data.results[0];
+            const userCard = document.createElement("li");
+            userCard.classList.add("user-card");
 
-      const userImage = document.createElement("img");
-      userImage.src = user.picture.thumbnail;
+            const userImage = document.createElement("img");
+            userImage.src = user.picture.thumbnail;
 
-      const userName = document.createElement("span");
-      userName.textContent = `${user.name.first} ${user.name.last}`;
+            const userName = document.createElement("span");
+            userName.textContent = `${user.name.first} ${user.name.last}`;
 
-      const removeButton = document.createElement("button");
-      removeButton.textContent = "Remove";
-      removeButton.addEventListener("click", () => {
-        userListElement.removeChild(userCard);
-      });
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.addEventListener("click", () => {
+              userListElement.removeChild(userCard);
+            });
 
-      userCard.appendChild(userImage);
-      userCard.appendChild(userName);
-      userCard.appendChild(removeButton);
-      userListElement.appendChild(userCard);
-    })
-    .catch((error) => console.error(error));
-}
+            userCard.appendChild(userImage);
+            userCard.appendChild(userName);
+            userCard.appendChild(removeButton);
+            userListElement.appendChild(userCard);
+          } else {
+            console.error("Error fetching data from server.");
+          }
+        };
+        xhr.onerror = () => console.error("Error making request.");
+        xhr.send();
+      }
 
-document.getElementById("getUser").addEventListener("click", getRandomUser);
+      document.getElementById("getUser").addEventListener("click", getRandomUser);

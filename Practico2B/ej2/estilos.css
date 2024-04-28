@@ -1,0 +1,29 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input, select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  #results {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }

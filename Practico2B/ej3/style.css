@@ -1,0 +1,64 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filters select {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.character-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.character-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.character-card h3 {
+    margin: 0;
+}
+
+.character-card p {
+    margin: 5px 0;
+}
+
+.character-card.deceased::after {
+    content: "X";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
+    color: rgb(95, 3, 3); /* Añade este estilo para que la X sea visible */
+    font-size: 20em; /* Ajusta el tamaño de la fuente según sea necesario */
+    display: flex; /* Alinea el contenido al centro vertical y horizontalmente */
+    justify-content: center;
+    align-items: center;
+}
